@@ -1,24 +1,19 @@
-//The map() method creates a new array with the results of the call to the indicated function applied to each of its elements.
+//The filter creates a new array with all the elements that meet the condition implemented by the given function
 
+//Mostrar el nombre de las frutas
 
-//Mostrar el nombre de los superheroes
+//Filter
 
-//Map
-const Superheroes = [
-    { nombre: "Tony", apellidos: "Stark" },
-    { nombre: "Steve", apellidos: "Rogers" },
-    { nombre: "Bruce", apellidos: "Banner" },
-    { nombre: "Natasha", apellidos: "Romanoff" },
-    { nombre: "Thor", apellidos: "Odinson" },
-    { nombre: "Clint", apellidos: "Barton" },
-    { nombre: "Bruce", apellidos: "Wayne" },
-    { nombre: "Clark", apellidos: "Kent" },
-];
+const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 
-function generarNombre({ nombre, apellidos }) {
-    return `${nombre} ${apellidos}`;
+/**
+ * Filtra la matríz en función de un criterio de búsqueda (query)
+ */
+const filterItems = query => {
+    return fruits.filter((el) =>
+        el.toLowerCase().indexOf(query.toLowerCase()) > -1
+    );
 }
 
-const nombres = Superheroes.map(generarNombre);
-
-console.log(nombres); // ["Tony Stark", "Steve Rogers", "Bruce Banner", "Natasha Romanoff", "Thor Odinson", "Clint Barton"]
+console.log(filterItems('ap')); // ['apple', 'grapes']
+console.log(filterItems('an')); // ['banana', 'mango', 'orange'
