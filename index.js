@@ -1,7 +1,7 @@
 //The map() method creates a new array with the results of the call to the indicated function applied to each of its elements.
 //The filter creates a new array with all the elements that meet the condition implemented by the given function
 //The find method execute the callback function once for each array index until it finds one where the callback returns a true value.
-
+//The reduce method executes a reducer function on each element of an array, returning a single value as a result.
 
 
 //map
@@ -53,3 +53,28 @@ function isPrime(element, index, array) {
 
 console.log([4, 6, 8, 12].find(isPrime)); // undefined, no encontrado
 console.log([4, 5, 8, 12].find(isPrime)); // 5
+
+//reduce
+//dar un valor
+[0, 1, 2, 3, 4].reduce(function(valorAnterior, valorActual, indice, vector) {
+    return valorAnterior + valorActual;
+}, 10);
+
+// Primera llamada
+valorAnterior = 10, valorActual = 0, indice = 0
+
+// Segunda llamada
+valorAnterior = 10, valorActual = 1, indice = 1
+
+// Tercera llamada
+valorAnterior = 11, valorActual = 2, indice = 2
+
+// Cuarta llamada
+valorAnterior = 13, valorActual = 3, indice = 3
+
+// Quinta llamada
+valorAnterior = 16, valorActual = 4, indice = 4
+
+// el array sobre el que se llama a reduce siempre es el objeto [0,1,2,3,4]
+
+// Valor Devuelto: 20
