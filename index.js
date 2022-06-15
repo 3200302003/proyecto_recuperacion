@@ -3,6 +3,7 @@
 //The find method execute the callback function once for each array index until it finds one where the callback returns a true value.
 //The reduce method executes a reducer function on each element of an array, returning a single value as a result.
 //The findIndex() method executes the callback function once for each array index until it finds one where callback returns a true value.
+//The replace() method returns a new string with some or all of the matches of a pattern , each of these matches being replaced by replace.
 
 //map
 const Superheroes = [
@@ -95,3 +96,14 @@ function isPrime(element, index, array) {
 
 console.log([4, 6, 8, 12].findIndex(isPrime)); // -1, no encontrado
 console.log([4, 6, 7, 12].findIndex(isPrime)); // 2
+
+//replace
+//Reemplazar los grados de Farenheit
+function f2c(x) {
+    function convert(str, p1, offset, s) {
+        return ((p1 - 32) * 5 / 9) + "C";
+    }
+    var s = String(x);
+    var test = /(\d+(?:\.\d*)?)F\b/g;
+    return s.replace(test, convert);
+}
