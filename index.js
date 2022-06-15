@@ -107,3 +107,11 @@ function f2c(x) {
     var test = /(\d+(?:\.\d*)?)F\b/g;
     return s.replace(test, convert);
 }
+
+//Hoisting
+//Dar el nombre de un gato
+function nombreDelGato(nombre) {
+    console.log("El nombre de mi gato es " + nombre);
+}
+
+nombreDelGato("Bigotes");
